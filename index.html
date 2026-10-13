@@ -8,47 +8,72 @@
 <style>
 :root{--gold:#D4A853;--teal:#2EC486;--orange:#FF7A45;--bg:#0A0F14;--card:#121A23;--line:#1E2A38;--muted:#8BA0B5}
 *{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{background:var(--bg);color:#fff;font-family:'Plus Jakarta Sans',sans-serif}
 .kente{height:6px;background:linear-gradient(90deg,var(--gold),var(--orange),var(--teal),var(--gold))}
-.nav{display:flex;justify-content:space-between;align-items:center;padding:18px 6%;border-bottom:1px solid var(--line)}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:18px 6%;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:10}
 .logo{font-weight:800;letter-spacing:2px;font-size:13px}.logo span{color:var(--gold)}
 .nav a{color:var(--muted);text-decoration:none;font-size:13px;margin-left:18px}
 .hero{padding:90px 6% 70px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
 .badge{border:1px solid rgba(212,168,83,.4);color:var(--gold);display:inline-block;padding:6px 14px;border-radius:30px;font-size:11px;letter-spacing:2px;margin-bottom:18px}
 .hero h1{font-size:48px;line-height:1.1;font-weight:800;margin-bottom:14px}.hero h1 span{color:var(--gold)}
 .hero p{color:var(--muted);font-size:16px;max-width:520px;margin-bottom:26px;line-height:1.6}
-.btn{padding:14px 28px;border-radius:30px;border:none;font-weight:700;text-decoration:none;display:inline-block}
+.btn{padding:14px 28px;border-radius:30px;border:none;font-weight:700;text-decoration:none;display:inline-block;cursor:pointer}
 .btn-gold{background:var(--gold);color:#000;margin-right:12px}
 .btn-line{border:1px solid var(--line);color:#fff;background:transparent}
-.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;cursor:pointer;transition:0.3s}
+.card:hover{border-color:var(--gold);transform:translateY(-3px)}
+.section{padding:60px 6%;border-top:1px solid var(--line)}
+.section h2{font-size:32px;margin-bottom:12px}.section h2 span{color:var(--gold)}
+.section p{color:var(--muted);line-height:1.7;max-width:700px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:24px}
 .footer{text-align:center;padding:40px;color:var(--muted);border-top:1px solid var(--line);margin-top:60px}
 .social{margin-top:18px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
 .social a{padding:12px 22px;border-radius:30px;text-decoration:none;color:#fff;font-weight:700;font-size:14px}
 .fb{background:#1877F2}.ig{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)}.tg{background:#26A5E4}.wa{background:#25D366}.mail{background:var(--line);border:1px solid var(--line)}
 .whatsapp-float{position:fixed;bottom:22px;right:22px;background:#25D366;color:white;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.4);z-index:999}
-@media(max-width:800px){.hero{grid-template-columns:1fr}}
+@media(max-width:800px){.hero{grid-template-columns:1fr}.hero h1{font-size:36px}}
 </style>
 </head>
 <body>
 <div class="kente"></div>
 <div class="nav">
 <div class="logo">THE <span>GRIOT</span> CIRCLE</div>
-<div><a href="#">Archive</a><a href="#">About</a><a href="#">Contact</a></div>
+<div><a href="#archive">Archive</a><a href="#about">About</a><a href="#contact">Contact</a></div>
 </div>
+
 <div class="hero">
 <div>
 <div class="badge">AKINBOBOLA AKINBOTE AMBROSE</div>
 <h1>Stories That <span>Keep</span> Culture Alive.</h1>
 <p>The Griot Circle is a living archive of African stories, oral history, and cultural memory — curated by Akinbobola Akinbote Ambrose.</p>
-<a class="btn btn-gold" href="#">Explore Archive</a>
-<a class="btn btn-line" href="#">About The Griot</a>
+<a class="btn btn-gold" href="#archive">Explore Archive</a>
+<a class="btn btn-line" href="#about">About The Griot</a>
 </div>
+<a href="#archive" style="text-decoration:none">
 <div class="card">
-<h3 style="margin-bottom:10px">The Oral Archive</h3>
-<p style="color:var(--muted);font-size:14px;line-height:1.6">Preserving proverbs, folktales, and histories passed through generations. Listen, read, and contribute.</p>
+<h3 style="margin-bottom:10px;color:#fff">The Oral Archive</h3>
+<p style="color:var(--muted);font-size:14px;line-height:1.6">Preserving proverbs, folktales, and histories passed through generations. Listen, read, and contribute. Tap to explore →</p>
+</div>
+</a>
+</div>
+
+<div id="archive" class="section">
+<h2>Explore <span>Archive</span></h2>
+<p>Welcome to the living archive — collection of African folktales, proverbs, and oral histories.</p>
+<div class="grid">
+<div class="card"><h4>📜 Folktales</h4><p style="font-size:13px;margin-top:8px">Ancient Yoruba tales of tortoise and wisdom.</p></div>
+<div class="card"><h4>🗣️ Proverbs</h4><p style="font-size:13px;margin-top:8px">Words of elders that guide generations.</p></div>
+<div class="card"><h4>🥁 Oral History</h4><p style="font-size:13px;margin-top:8px">Voices from the past, preserved for tomorrow.</p></div>
 </div>
 </div>
-<div class="footer">
+
+<div id="about" class="section">
+<h2>About <span>The Griot</span></h2>
+<p>I am <b style="color:#fff">Akinbobola Akinbote Ambrose</b>, storyteller, culture keeper, and founder of The Griot Circle. My mission is to keep African stories alive in digital age — so our children will not forget who they are. Every story here is collected, preserved, and shared with love for our heritage.</p>
+</div>
+
+<div id="contact" class="footer">
 <div>© 2026 The Griot Circle — Akinbobola Akinbote Ambrose</div>
 <div style="margin-top:8px">Connect with me directly:</div>
 <div class="social">
@@ -59,6 +84,7 @@ body{background:var(--bg);color:#fff;font-family:'Plus Jakarta Sans',sans-serif}
 <a class="mail" href="mailto:akinboteakinbobola@gmail.com">Email</a>
 </div>
 </div>
+
 <a class="whatsapp-float" href="https://wa.me/2348120250315?text=Hello%20Akinbobola!%20I%20visited%20The%20Griot%20Circle%20website" target="_blank">💬</a>
 </body>
 </html>
