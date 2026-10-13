@@ -31,6 +31,7 @@ body{background:var(--bg);color:var(--white);font-family:'Plus Jakarta Sans',san
 .section-desc{color:var(--muted);line-height:1.8;max-width:720px;font-size:16px;margin-bottom:10px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:30px}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:30px;align-items:start}
+.profile-img{width:100%;max-width:380px;border-radius:18px;border:2px solid var(--gold);object-fit:cover;display:block}
 .stat{border:1px solid var(--line);border-radius:16px;padding:20px;text-align:center}.stat b{font-size:28px;color:var(--gold);display:block}.stat span{color:var(--muted);font-size:13px}
 .footer{text-align:center;padding:50px 6%;color:var(--muted);border-top:1px solid var(--line);background:var(--card)}
 .social{margin-top:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
@@ -101,16 +102,20 @@ body{background:var(--bg);color:var(--white);font-family:'Plus Jakarta Sans',san
 <h2>About <span>The Griot</span></h2>
 <div class="about-grid">
 <div>
+<img src="1784993579761.jpg" alt="Akinbobola Akinbote Ambrose - The Griot" class="profile-img">
+<div style="margin-top:12px;font-size:12px;color:var(--muted)">📍 Lagos, Nigeria • Akinbobola Akinbote Ambrose | 2026 • Culture Keeper</div>
+</div>
+<div>
 <p class="section-desc">I am <b style="color:var(--white)">Akinbobola Akinbote Ambrose</b>, storyteller, culture keeper, and founder of The Griot Circle from Lagos, Nigeria.</p>
 <p class="section-desc">My mission is simple: <b style="color:var(--white)">Keep African stories alive in digital age.</b> Our grandparents told us stories by moonlight. Today, moonlight is phone screen — but story must continue.</p>
 <p class="section-desc">Every tale, proverb and history on this site is collected, verified, and shared with love for our heritage. If you have a story from your village, share it with me.</p>
-<div style="margin-top:20px"><a class="btn btn-gold" href="#contact">Connect With Me</a></div>
-</div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px">
 <div class="stat"><b>100+</b><span>Stories Preserved</span></div>
 <div class="stat"><b>3</b><span>Collections</span></div>
 <div class="stat"><b>700</b><span>Years of Tradition</span></div>
 <div class="stat"><b>1</b><span>Mission: Keep Culture Alive</span></div>
+</div>
+<div style="margin-top:20px"><a class="btn btn-gold" href="#contact">Connect With Me</a></div>
 </div>
 </div>
 </section>
@@ -168,7 +173,7 @@ c.innerHTML=`
 <p><b>Talking Drum:</b> Drum mimics Yoruba tones. Message can travel 10 villages in 1 hour. Faster than SMS that time.</p>
 <p><b>Today:</b> I, Akinbobola Akinbote Ambrose, continue with phone, Instagram @Akinbobolakinbote, Telegram, WhatsApp — same mission: Keep stories alive so children no forget who they be.</p>
 <p><i>You reading this now, you be part of history.</i></p>
-<p style="margin-top:16px"><a class="btn btn-gold" href="#about">Meet The Griot</a></p>
+<p style="margin-top:16px"><a class="btn btn-gold" onclick="closeModal(); setTimeout(()=>{document.getElementById('about').scrollIntoView({behavior:'smooth'})},300)" href="javascript:void(0)">Meet The Griot</a></p>
 `;
 }
 m.classList.add('active');document.body.style.overflow='hidden';
