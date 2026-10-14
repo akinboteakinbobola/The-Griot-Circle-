@@ -3,58 +3,73 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Griot Circle - ALL POSTS FIXED</title>
+<title>The Griot Circle - ALL POSTS JSONP FIXED</title>
 <style>
 body{background:#0E1A2B;color:#fff;font-family:sans-serif;padding:16px}
-#info{background:#16233A;border:1px solid #D4AF37;padding:12px;border-radius:8px;margin:12px 0;font-size:13px}
+#info{background:#16233A;border:1px solid #D4AF37;padding:12px;border-radius:8px;margin:12px 0}
 .card{background:#16233A;border:1px solid rgba(212,175,55,.3);padding:12px;margin:10px 0;border-radius:10px}
-.card h4{color:#FFC94A;font-size:14px;margin:4px 0}
+.card h4{color:#FFC94A;font-size:14px}
 a{color:#D4AF37;text-decoration:none}
 </style>
 </head>
 <body>
-<h2>THE GRIOT CIRCLE - ALL POSTS (FIXED CORS)</h2>
-<div id="info">Loading ALL your posts with CORS-free loader... please wait...</div>
+<h2>THE GRIOT CIRCLE - ALL POSTS (JSONP FINAL)</h2>
+<div id="info">Loading ALL posts via JSONP (Google approved method)...</div>
 <div id="posts">Starting...</div>
+
 <script>
-let allPosts=[];
-async function loadViaRSS2JSON(start){
-  let rss=`https://akinbobolakinbote.blogspot.com/feeds/posts/default?alt=rss&max-results=150&start-index=${start}`;
-  let api=`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rss)}`;
-  let r=await fetch(api);
-  let j=await r.json();
-  return j.items||[];
-}
-async function loadAll(){
-  let start=1;
-  let page=1;
-  try{
-    while(true){
-      document.getElementById('posts').innerHTML=`Loading page ${page}... Total so far: ${allPosts.length} posts...`;
-      let items=await loadViaRSS2JSON(start);
-      if(items.length===0) break;
-      allPosts=allPosts.concat(items);
-      if(items.length<150) break;
-      start+=150;
-      page++;
-      // safety break after 5 pages (750 posts max)
-      if(page>5) break;
-    }
-    document.getElementById('info').innerHTML=`✅ TOTAL: <b>${allPosts.length} posts</b> loaded from your Blogspot - All clickable!`;
-    let html='';
-    allPosts.forEach(p=>{
-      let title=p.title;
-      let link=p.link;
-      let date=new Date(p.pubDate).toLocaleDateString();
-      let snippet=p.description.replace(/<[^>]*>/g,'').substring(0,120);
-      html+=`<div class="card"><div style="font-size:10px;color:#D4AF37">${date}</div><h4><a href="${link}" target="_blank">${title}</a></h4><div style="font-size:11px;color:#aaa">${snippet}...</div><a href="${link}" target="_blank" style="font-size:12px">Read full →</a></div>`;
-    });
-    document.getElementById('posts').innerHTML=html;
-  }catch(e){
-    document.getElementById('info').innerHTML=`Error: ${e.message} - <a href="https://akinbobolakinbote.blogspot.com" target="_blank">View blog directly</a>`;
+let all=[];
+let totalExpected=0;
+let loadedPages=0;
+
+function handleBatch(json){
+  let entries=json.feed.entry||[];
+  if(loadedPages===0){
+    totalExpected=parseInt(json.feed.openSearch$totalResults.$t||0);
+    document.getElementById('info').innerHTML=`Blog has ${totalExpected} posts - Loading...`;
+  }
+  
+  entries.forEach(e=>{
+    let title=e.title.$t;
+    let link=(e.link.find(l=>l.rel==='alternate')||{}).href;
+    let date=new Date(e.published.$t).toLocaleDateString();
+    let snippet=(e.summary?e.summary.$t:(e.content?e.content.$t:'')).replace(/<[^>]*>/g,'').substring(0,120);
+    all.push({title,link,date,snippet});
+  });
+  
+  loadedPages++;
+  document.getElementById('posts').innerHTML=`Loaded ${all.length} / ${totalExpected} posts... Page ${loadedPages}`;
+  
+  // Check if more pages needed
+  if(all.length < totalExpected){
+    let nextStart = loadedPages*150 + 1;
+    loadScript(nextStart);
+  } else {
+    showAll();
   }
 }
-loadAll();
+
+function loadScript(startIndex){
+  let s=document.createElement('script');
+  s.src=`https://akinbobolakinbote.blogspot.com/feeds/posts/default?alt=json&max-results=150&start-index=${startIndex}&callback=handleBatch`;
+  s.onerror=function(){
+    document.getElementById('info').innerHTML=`Loaded ${all.length} posts (partial due to network) - Showing what we have`;
+    showAll();
+  };
+  document.head.appendChild(s);
+}
+
+function showAll(){
+  document.getElementById('info').innerHTML=`✅ TOTAL: <b>${all.length} posts</b> loaded from Blogspot - All clickable!`;
+  let html='';
+  all.forEach(p=>{
+    html+=`<div class="card"><div style="font-size:10px;color:#D4AF37">${p.date}</div><h4><a href="${p.link}" target="_blank">${p.title}</a></h4><div style="font-size:11px;color:#aaa">${p.snippet}...</div><a href="${p.link}" target="_blank">Read full →</a></div>`;
+  });
+  document.getElementById('posts').innerHTML=html;
+}
+
+// Start first load
+loadScript(1);
 </script>
 </body>
 </html>
