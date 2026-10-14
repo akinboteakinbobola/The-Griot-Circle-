@@ -1,106 +1,166 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Griot Circle - Official</title>
+<title>The Griot Circle - Official | Akinbobola Akinbote</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-:root{--gold:#D4AF37;--dark:#0E1A2B;--card:#16233A}
-body{margin:0;background:var(--dark);color:#fff;font-family:Georgia,serif}
-header{background:rgba(14,26,43,.95);border-bottom:2px solid var(--gold);padding:12px 16px;position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center}
-header h1{margin:0;color:var(--gold);font-size:18px}
-.search{padding:8px 12px;border-radius:20px;border:1px solid var(--gold);background:var(--card);color:#fff;width:40%}
-.hero{background:linear-gradient(135deg,#0E1A2B 0%,#1a2a4a 100%);padding:30px 16px;text-align:center;border-bottom:1px solid var(--gold)}
-.hero h2{color:var(--gold);font-size:28px;margin:0}
-.grid{padding:16px;display:grid;grid-template-columns:1fr;gap:16px}
-@media(min-width:700px){.grid{grid-template-columns:1fr 1fr}}
-article{background:var(--card);border-radius:12px;overflow:hidden;border:1px solid rgba(212,175,55,.2)}
-article img{width:100%;height:200px;object-fit:cover}
-article.content{padding:12px}
-article h3{color:#FFC94A;font-size:16px;margin:6px 0}
-article p{color:#aaa;font-size:13px;line-height:1.5}
-article.meta{font-size:10px;color:var(--gold)}
-.fullpage{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--dark);z-index:20;overflow:auto;padding:16px}
-.fullpage.active{display:block}
-.fullpage img{max-width:100%;border-radius:8px}
-.fullpage.close{background:var(--gold);color:#000;padding:10px 16px;border:none;border-radius:20px;position:sticky;top:10px}
+:root{--gold:#D4AF37;--dark:#0E1A2B;--card:#16233A;--gold-light:#FFC94A}
+*{box-sizing:border-box}
+body{margin:0;background:var(--dark);color:#fff;font-family:Georgia,serif;line-height:1.6}
+header{position:sticky;top:0;z-index:20;background:rgba(14,26,43,.98);backdrop-filter:blur(10px);border-bottom:2px solid var(--gold);padding:12px 16px;display:flex;justify-content:space-between;align-items:center}
+header h1{margin:0;color:var(--gold);font-size:18px;letter-spacing:1px}
+.nav a{color:#ddd;text-decoration:none;margin-left:12px;font-size:12px}
+.nav a:hover{color:var(--gold)}
+.hero{background:linear-gradient(135deg,#0E1A2B 0%,#1E3A5F 100%);text-align:center;padding:32px 16px;border-bottom:1px solid rgba(212,175,55,.3)}
+.hero h2{color:var(--gold);font-size:28px;margin:0 0 6px}
+.search-wrap{margin:16px auto 0;max-width:500px}
+.search{width:100%;padding:12px 18px;border-radius:30px;border:1px solid var(--gold);background:var(--card);color:#fff;outline:none}
+.grid{padding:16px;display:grid;grid-template-columns:1fr;gap:16px;max-width:1100px;margin:0 auto}
+@media(min-width:720px){.grid{grid-template-columns:1fr 1fr 1fr}}
+.card{background:var(--card);border-radius:14px;overflow:hidden;border:1px solid rgba(212,175,55,.15);transition:.2s}
+.card:hover{transform:translateY(-4px);border-color:var(--gold)}
+.card img{width:100%;height:190px;object-fit:cover}
+.card.c{padding:12px}
+.meta{color:var(--gold);font-size:10px;letter-spacing:.5px}
+.card h3{color:var(--gold-light);font-size:15px;margin:6px 0;line-height:1.3}
+.card p{color:#aaa;font-size:12px;margin:6px 0 10px}
+.btn{background:var(--gold);color:#000;border:none;padding:8px 16px;border-radius:20px;font-weight:700;cursor:pointer;font-size:12px}
+.section{max-width:1100px;margin:24px auto;padding:24px 16px;background:var(--card);border-radius:16px;border:1px solid rgba(212,175,55,.2)}
+.section h2{color:var(--gold);margin-top:0}
+.author-flex{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.author-flex img{width:90px;height:90px;border-radius:50%;border:3px solid var(--gold);object-fit:cover}
+.socials{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.socials a{width:48px;height:48px;border-radius:50%;background:var(--gold);color:#000;display:flex;align-items:center;justify-content:center;font-size:20px;text-decoration:none;transition:.2s}
+.socials a:hover{transform:scale(1.1)}
+.full{position:fixed;inset:0;background:var(--dark);z-index:50;overflow:auto;padding:18px;display:none}
+.full.active{display:block}
+.full img{max-width:100%;border-radius:10px}
+.comment{background:#0f1d33;border-radius:10px;padding:14px;margin-top:20px;border:1px solid rgba(212,175,55,.2)}
+.comment input,.comment textarea{width:100%;padding:10px;margin:6px 0;border-radius:8px;border:1px solid var(--gold);background:var(--dark);color:#fff;font-family:inherit}
+.comment-list div{background:var(--dark);padding:10px;margin:8px 0;border-radius:8px;border-left:3px solid var(--gold)}
+footer{text-align:center;padding:20px;color:#777;font-size:11px;border-top:1px solid rgba(212,175,55,.1);margin-top:30px}
 </style>
 </head>
 <body>
+
 <header>
 <h1>THE GRIOT CIRCLE</h1>
-<input id="search" class="search" placeholder="Search 46 posts... e.g. Garri, Ijebu">
+<div class="nav"><a href="#author">Author</a><a href="#contact">Contact</a></div>
 </header>
+
 <div class="hero">
 <h2>From Tinubu Square to Global Stories</h2>
-<p style="color:#ccc;font-size:13px">46 Stories by Akinbobola Akinbote - Food, History, Culture, Faith</p>
+<p id="count" style="color:#ccc;font-size:13px">Loading stories...</p>
+<div class="search-wrap"><input id="search" class="search" placeholder="Search 46 stories — e.g. Garri, Ijebu, Fufu, Ankh..."></div>
 </div>
+
 <div id="grid" class="grid">Loading your 46 posts as normal pages...</div>
-<div id="full" class="fullpage">
-<button class="close" onclick="document.getElementById('full').classList.remove('active')">← Back to all posts</button>
-<div id="fullContent" style="margin-top:16px"></div>
+
+<!-- AUTHOR STORY -->
+<div id="author" class="section">
+<h2><i class="fa fa-feather"></i> The Griot — Author Story</h2>
+<div class="author-flex">
+<img src="https://i.imgur.com/8Km9tLL.png" alt="Akinbobola Akinbote">
+<div style="flex:1;min-width:250px">
+<h3 style="margin:0;color:var(--gold-light)">Akinbobola Akinbote</h3>
+<p style="color:#ccc;font-size:13px;margin:6px 0">Cultural historian, food anthropologist & storyteller. I am documenting Yoruba heritage, Ijebu origin, Nigerian food systems (Garri, Fufu, Zobo), and the hidden African roots of global faith — from Ojuelegba Shrine to Nsude Pyramids, from Tinubu Square to the Bible.</p>
+<p style="color:#aaa;font-size:12px"><b>Mission:</b> To reclaim our stories before they are licked like ice cream. A worker's sweat is not ice cream. Every thread you read here connects Lagos to the world.</p>
 </div>
+</div>
+</div>
+
+<!-- CONTACT + SOCIALS -->
+<div id="contact" class="section">
+<h2><i class="fa fa-comments"></i> Connect — Contact & Socials</h2>
+<p style="color:#aaa;font-size:13px">Follow the circle, chat, collaborate, or invite me for history/food talks.</p>
+
+<div class="socials">
+<!-- REPLACE LINKS BELOW WITH YOUR REAL LINKS -->
+<a href="https://www.facebook.com/akinbobolakinbote" target="_blank" title="Facebook Page"><i class="fab fa-facebook-f"></i></a>
+<a href="https://www.instagram.com/akinbobolakinbote" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+<a href="https://wa.me/2348012345678?text=Hello%20Griot%20from%20your%20website!" target="_blank" title="WhatsApp Chat"><i class="fab fa-whatsapp"></i></a>
+<a href="mailto:akinbobolakinbote@gmail.com" title="Email Me"><i class="fa fa-envelope"></i></a>
+<a href="https://akinbobolakinbote.blogspot.com" target="_blank" title="Blogspot"><i class="fa fa-blog"></i></a>
+</div>
+
+<div style="margin-top:16px;color:#ccc;font-size:12px;background:var(--dark);padding:12px;border-radius:8px">
+<b style="color:var(--gold)">TO MAKE IT YOURS (30 sec):</b><br>
+1. Facebook: change <code>facebook.com/akinbobolakinbote</code> to your real page<br>
+2. Instagram: change <code>instagram.com/akinbobolakinbote</code><br>
+3. WhatsApp: change <code>2348012345678</code> to your number (without 0, with 234)<br>
+4. Email: change <code>akinbobolakinbote@gmail.com</code><br>
+Then Commit again — icons go work instantly!
+</div>
+</div>
+
+<!-- FULL POST VIEW -->
+<div id="full" class="full">
+<button class="btn" onclick="closeFull()"><i class="fa fa-arrow-left"></i> Back to Stories</button>
+<div id="fullContent" style="max-width:800px;margin:20px auto"></div>
+
+<!-- COMMENT SECTION -->
+<div class="comment" style="max-width:800px;margin:20px auto">
+<h3 style="color:var(--gold)"><i class="fa fa-comments"></i> Griot Circle Comments</h3>
+<input id="cName" placeholder="Your Name">
+<textarea id="cText" rows="3" placeholder="What do you think about this story?"></textarea>
+<button class="btn" onclick="addComment()"><i class="fa fa-paper-plane"></i> Post Comment</button>
+<div id="cList" style="margin-top:14px"></div>
+<p style="color:#666;font-size:10px;margin-top:10px">Comments are saved on this device + Disqus global comments below (if enabled). For worldwide comments, create free account at disqus.com and replace YOUR_DISQUS_SHORTNAME below.</p>
+<div id="disqus_thread"></div>
+</div>
+</div>
+
+<footer>The Griot Circle © 2026 • Built by Akinbobola Akinbote • Powered by Blogger → GitHub Pages<br>From Tinubu Square to Global Stories</footer>
 
 <script>
-let allPosts=[];
-function getImageFromContent(content){
- let m=content.match(/<img[^>]+src="([^">]+)"/);
- return m?m[1]:'https://via.placeholder.com/400x200/16233A/D4AF37?text=THE+GRIOT+CIRCLE';
-}
-
+let allPosts=[], currentIdx=0;
+function getImg(c){let m=c.match(/<img[^>]+src="([^">]+)"/);return m?m[1]:'https://via.placeholder.com/600x350/16233A/D4AF37?text=THE+GRIOT+CIRCLE';}
 function handleBatch(json){
  let entries=json.feed.entry||[];
  if(allPosts.length===0 && json.feed.openSearch$totalResults){
-  document.querySelector('.hero p').innerText=`${json.feed.openSearch$totalResults.$t} Stories by Akinbobola Akinbote - Food, History, Culture, Faith`;
+  document.getElementById('count').innerText=json.feed.openSearch$totalResults.$t+' Stories by Akinbobola Akinbote • Food, History, Culture, Faith';
  }
  entries.forEach(e=>{
-  let title=e.title.$t;
-  let content=e.content?e.content.$t:(e.summary?e.summary.$t:'');
+  let title=e.title.$t; let content=e.content?e.content.$t:(e.summary?e.summary.$t:'');
   let link=(e.link.find(l=>l.rel==='alternate')||{}).href;
-  let date=new Date(e.published.$t).toLocaleDateString();
-  let img=getImageFromContent(content);
-  let text=content.replace(/<[^>]*>/g,'').substring(0,150);
+  let date=new Date(e.published.$t).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});
+  let img=getImg(content); let text=content.replace(/<[^>]*>/g,'').substring(0,130);
   allPosts.push({title,content,link,date,img,text});
  });
-
  if(json.feed.entry && allPosts.length < parseInt(json.feed.openSearch$totalResults.$t)){
-  let next=allPosts.length+1;
-  loadScript(next);
- } else {
-  render(allPosts);
- }
+  loadScript(allPosts.length+1);
+ } else { render(allPosts); }
 }
-
-function loadScript(start){
- let s=document.createElement('script');
- s.src=`https://akinbobolakinbote.blogspot.com/feeds/posts/default?alt=json&max-results=150&start-index=${start}&callback=handleBatch`;
- document.head.appendChild(s);
-}
-
+function loadScript(s){let sc=document.createElement('script');sc.src=`https://akinbobolakinbote.blogspot.com/feeds/posts/default?alt=json&max-results=150&start-index=${s}&callback=handleBatch`;document.head.appendChild(sc);}
 function render(list){
- let grid=document.getElementById('grid');
- grid.innerHTML='';
+ let g=document.getElementById('grid'); g.innerHTML='';
  list.forEach((p,i)=>{
-  let art=document.createElement('article');
-  art.innerHTML=`<img src="${p.img}" loading="lazy"><div class="content"><div class="meta">${p.date}</div><h3>${p.title}</h3><p>${p.text}...</p><button onclick="openFull(${i})" style="background:var(--gold);border:none;padding:6px 12px;border-radius:12px;margin-top:6px">Read full story</button></div>`;
-  art.dataset.title=p.title.toLowerCase();
-  grid.appendChild(art);
+  let d=document.createElement('div'); d.className='card';
+  d.innerHTML=`<img src="${p.img}" loading="lazy"><div class="c"><div class="meta"><i class="fa fa-calendar"></i> ${p.date}</div><h3>${p.title}</h3><p>${p.text}...</p><button class="btn" onclick="openFull(${i})">Read Story <i class="fa fa-arrow-right"></i></button></div>`;
+  g.appendChild(d);
  });
 }
-
 function openFull(i){
- let p=allPosts[i];
- document.getElementById('fullContent').innerHTML=`<div style="color:var(--gold);font-size:11px">${p.date}</div><h1 style="color:#FFC94A">${p.title}</h1><div style="line-height:1.7;font-size:14px;color:#ddd">${p.content}</div><p><a href="${p.link}" target="_blank" style="color:var(--gold)">View original on Blogspot →</a></p>`;
- document.getElementById('full').classList.add('active');
- window.scrollTo(0,0);
+ currentIdx=i; let p=allPosts[i];
+ document.getElementById('fullContent').innerHTML=`<div class="meta">${p.date}</div><h1 style="color:var(--gold-light);font-size:24px;line-height:1.2">${p.title}</h1><div style="margin:12px 0"><img src="${p.img}" style="width:100%;max-height:400px;object-fit:cover"></div><div style="font-size:14px;color:#ddd;line-height:1.8">${p.content}</div><p style="margin-top:20px"><a href="${p.link}" target="_blank" style="color:var(--gold)">View original on Blogspot →</a></p>`;
+ document.getElementById('full').classList.add('active'); loadComments(); window.scrollTo(0,0);
 }
-
+function closeFull(){document.getElementById('full').classList.remove('active');}
+function addComment(){
+ let n=document.getElementById('cName').value.trim()||'Anonymous'; let t=document.getElementById('cText').value.trim(); if(!t) return;
+ let key='griot_c_'+currentIdx; let list=JSON.parse(localStorage.getItem(key)||'[]'); list.push({n,t,d:new Date().toLocaleString()});
+ localStorage.setItem(key,JSON.stringify(list)); document.getElementById('cText').value=''; loadComments();
+}
+function loadComments(){
+ let key='griot_c_'+currentIdx; let list=JSON.parse(localStorage.getItem(key)||'[]'); let html='';
+ list.slice().reverse().forEach(c=>{html+=`<div><b style="color:var(--gold)">${c.n}</b> <small style="color:#888">${c.d}</small><br><span style="font-size:13px;color:#ddd">${c.t}</span></div>`;});
+ document.getElementById('cList').innerHTML=html||'<p style="color:#777;font-size:12px">No comments yet. Be first to comment!</p>';
+}
 document.getElementById('search').addEventListener('input',e=>{
- let q=e.target.value.toLowerCase();
- let filtered=allPosts.filter(p=>p.title.toLowerCase().includes(q) || p.text.toLowerCase().includes(q));
- render(filtered);
+ let q=e.target.value.toLowerCase(); render(allPosts.filter(p=>p.title.toLowerCase().includes(q)||p.text.toLowerCase().includes(q)));
 });
-
 loadScript(1);
 </script>
 </body>
