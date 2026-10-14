@@ -44,25 +44,20 @@ footer{text-align:center;padding:20px;color:#777;font-size:11px;border-top:1px s
 </style>
 </head>
 <body>
-
 <header>
 <h1>THE GRIOT CIRCLE</h1>
 <div class="nav"><a href="#author">Author</a><a href="#contact">Contact</a></div>
 </header>
-
 <div class="hero">
 <h2>From Tinubu Square to Global Stories</h2>
 <p id="count" style="color:#ccc;font-size:13px">Loading stories...</p>
 <div class="search-wrap"><input id="search" class="search" placeholder="Search 46 stories — e.g. Garri, Ijebu, Fufu, Ankh..."></div>
 </div>
-
 <div id="grid" class="grid">Loading your 46 posts as normal pages...</div>
-
-<!-- AUTHOR STORY -->
 <div id="author" class="section">
 <h2><i class="fa fa-feather"></i> The Griot — Author Story</h2>
 <div class="author-flex">
-<img src="https://i.imgur.com/8Km9tLL.png" alt="Akinbobola Akinbote">
+<img src="author.jpg" alt="Akinbobola Akinbote">
 <div style="flex:1;min-width:250px">
 <h3 style="margin:0;color:var(--gold-light)">Akinbobola Akinbote</h3>
 <p style="color:#ccc;font-size:13px;margin:6px 0">Cultural historian, food anthropologist & storyteller. I am documenting Yoruba heritage, Ijebu origin, Nigerian food systems (Garri, Fufu, Zobo), and the hidden African roots of global faith — from Ojuelegba Shrine to Nsude Pyramids, from Tinubu Square to the Bible.</p>
@@ -70,50 +65,34 @@ footer{text-align:center;padding:20px;color:#777;font-size:11px;border-top:1px s
 </div>
 </div>
 </div>
-
-<!-- CONTACT + SOCIALS -->
 <div id="contact" class="section">
 <h2><i class="fa fa-comments"></i> Connect — Contact & Socials</h2>
 <p style="color:#aaa;font-size:13px">Follow the circle, chat, collaborate, or invite me for history/food talks.</p>
-
 <div class="socials">
-<!-- REPLACE LINKS BELOW WITH YOUR REAL LINKS -->
-<a href="https://www.facebook.com/akinbobolakinbote" target="_blank" title="Facebook Page"><i class="fab fa-facebook-f"></i></a>
+<a href="https://www.facebook.com/akinbobolakinbote" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
 <a href="https://www.instagram.com/akinbobolakinbote" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-<a href="https://wa.me/2348012345678?text=Hello%20Griot%20from%20your%20website!" target="_blank" title="WhatsApp Chat"><i class="fab fa-whatsapp"></i></a>
-<a href="mailto:akinbobolakinbote@gmail.com" title="Email Me"><i class="fa fa-envelope"></i></a>
+<a href="https://wa.me/2348120250315?text=Hello%20Griot%20from%20your%20website!%20I%20read%20your%20story%20on%20The%20Griot%20Circle" target="_blank" title="WhatsApp Chat"><i class="fab fa-whatsapp"></i></a>
+<a href="mailto:akinbobolakinbote@gmail.com" title="Email"><i class="fa fa-envelope"></i></a>
 <a href="https://akinbobolakinbote.blogspot.com" target="_blank" title="Blogspot"><i class="fa fa-blog"></i></a>
 </div>
-
 <div style="margin-top:16px;color:#ccc;font-size:12px;background:var(--dark);padding:12px;border-radius:8px">
-<b style="color:var(--gold)">TO MAKE IT YOURS (30 sec):</b><br>
-1. Facebook: change <code>facebook.com/akinbobolakinbote</code> to your real page<br>
-2. Instagram: change <code>instagram.com/akinbobolakinbote</code><br>
-3. WhatsApp: change <code>2348012345678</code> to your number (without 0, with 234)<br>
-4. Email: change <code>akinbobolakinbote@gmail.com</code><br>
-Then Commit again — icons go work instantly!
+<b style="color:var(--gold)">CONTACT: 08120250315 (WhatsApp Active)</b><br>
+Click WhatsApp icon to chat me directly!
 </div>
 </div>
-
-<!-- FULL POST VIEW -->
 <div id="full" class="full">
 <button class="btn" onclick="closeFull()"><i class="fa fa-arrow-left"></i> Back to Stories</button>
 <div id="fullContent" style="max-width:800px;margin:20px auto"></div>
-
-<!-- COMMENT SECTION -->
 <div class="comment" style="max-width:800px;margin:20px auto">
 <h3 style="color:var(--gold)"><i class="fa fa-comments"></i> Griot Circle Comments</h3>
 <input id="cName" placeholder="Your Name">
 <textarea id="cText" rows="3" placeholder="What do you think about this story?"></textarea>
 <button class="btn" onclick="addComment()"><i class="fa fa-paper-plane"></i> Post Comment</button>
 <div id="cList" style="margin-top:14px"></div>
-<p style="color:#666;font-size:10px;margin-top:10px">Comments are saved on this device + Disqus global comments below (if enabled). For worldwide comments, create free account at disqus.com and replace YOUR_DISQUS_SHORTNAME below.</p>
 <div id="disqus_thread"></div>
 </div>
 </div>
-
-<footer>The Griot Circle © 2026 • Built by Akinbobola Akinbote • Powered by Blogger → GitHub Pages<br>From Tinubu Square to Global Stories</footer>
-
+<footer>The Griot Circle © 2026 • Akinbobola Akinbote • WhatsApp: 08120250315<br>From Tinubu Square to Global Stories</footer>
 <script>
 let allPosts=[], currentIdx=0;
 function getImg(c){let m=c.match(/<img[^>]+src="([^">]+)"/);return m?m[1]:'https://via.placeholder.com/600x350/16233A/D4AF37?text=THE+GRIOT+CIRCLE';}
