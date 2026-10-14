@@ -1,185 +1,95 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Griot Circle | Akinbobola Akinbote Ambrose - Culture Keeper</title>
-<meta name="description" content="The Griot Circle - Living archive of African folktales, proverbs and oral history curated by Akinbobola Akinbote Ambrose">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<title>The Griot Circle | Akinbobola Akinbote Ambrose</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--gold:#D4A853;--teal:#2EC486;--orange:#FF7A45;--bg:#0A0F14;--card:#121A23;--card2:#18232F;--line:#1E2A38;--muted:#8BA0B5;--white:#fff}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;overflow-x:hidden}
-.kente{height:6px;background:linear-gradient(90deg,var(--gold),var(--orange),var(--teal),var(--gold));position:sticky;top:0;z-index:100}
-.nav{display:flex;justify-content:space-between;align-items:center;padding:18px 6%;border-bottom:1px solid var(--line);position:sticky;top:6px;background:rgba(10,15,20,0.95);backdrop-filter:blur(10px);z-index:99}
-.logo{font-weight:800;letter-spacing:2px;font-size:13px}.logo span{color:var(--gold)}
-.nav-links a{color:var(--muted);text-decoration:none;font-size:13px;margin-left:22px;transition:0.3s}.nav-links a:hover{color:var(--gold)}
-.hero{padding:90px 6% 70px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;min-height:80vh}
-.badge{border:1px solid rgba(212,168,83,.4);color:var(--gold);display:inline-block;padding:7px 16px;border-radius:30px;font-size:11px;letter-spacing:2px;margin-bottom:18px;background:rgba(212,168,83,0.08)}
-.hero h1{font-size:52px;line-height:1.05;font-weight:800;margin-bottom:16px}.hero h1 span{color:var(--gold)}
-.hero p{color:var(--muted);font-size:17px;max-width:540px;margin-bottom:30px;line-height:1.7}
-.btn{padding:14px 28px;border-radius:30px;border:none;font-weight:700;text-decoration:none;display:inline-block;cursor:pointer;transition:0.3s;font-size:14px}
-.btn-gold{background:var(--gold);color:#000;margin-right:12px}.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(212,168,83,0.3)}
-.btn-line{border:1px solid var(--line);color:#fff;background:transparent}.btn-line:hover{border-color:var(--gold);color:var(--gold)}
-.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;cursor:pointer;transition:0.3s}
-.card:hover{border-color:var(--gold);transform:translateY(-4px);background:var(--card2)}
-.card h4{color:var(--white);font-size:18px;margin-bottom:6px}
-.card p{color:var(--muted);font-size:14px;line-height:1.6}
-.section{padding:70px 6%;border-top:1px solid var(--line)}
-.section h2{font-size:36px;margin-bottom:14px;font-weight:800}.section h2 span{color:var(--gold)}
-.section-desc{color:var(--muted);line-height:1.8;max-width:720px;font-size:16px;margin-bottom:10px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:30px}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:30px;align-items:start}
-.profile-img{width:100%;max-width:380px;border-radius:18px;border:2px solid var(--gold);object-fit:cover;display:block}
-.stat{border:1px solid var(--line);border-radius:16px;padding:20px;text-align:center}.stat b{font-size:28px;color:var(--gold);display:block}.stat span{color:var(--muted);font-size:13px}
-.footer{text-align:center;padding:50px 6%;color:var(--muted);border-top:1px solid var(--line);background:var(--card)}
-.social{margin-top:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.social a{padding:13px 24px;border-radius:30px;text-decoration:none;color:#fff;font-weight:700;font-size:14px;transition:0.3s;display:inline-flex;align-items:center;gap:6px}
-.social a:hover{transform:translateY(-2px)}
-.fb{background:#1877F2}.ig{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)}.tg{background:#26A5E4}.wa{background:#25D366}.mail{background:var(--line);border:1px solid #2A3A4D}
-.whatsapp-float{position:fixed;bottom:22px;right:22px;background:#25D366;color:white;width:62px;height:62px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.5);z-index:999;animation:pulse 2s infinite}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,0.7)}70%{box-shadow:0 0 0 15px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
-.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.88);z-index:1000;align-items:center;justify-content:center;padding:18px}
-.modal.active{display:flex}
-.modal-box{background:var(--card2);border:1px solid var(--line);border-radius:22px;padding:30px;max-width:680px;width:100%;max-height:85vh;overflow-y:auto;position:relative;animation:slideUp 0.3s ease}
-@keyframes slideUp{from{transform:translateY(40px);opacity:0}to{transform:translateY(0);opacity:1}}
-.modal-box h3{font-size:26px;margin-bottom:14px}.modal-box h3 span{color:var(--gold)}
-.modal-box p{color:var(--muted);line-height:1.9;margin-bottom:14px;font-size:15px}
-.modal-box b{color:var(--white)}
-.close{position:absolute;top:12px;right:18px;font-size:30px;color:var(--muted);cursor:pointer;background:none;border:none;line-height:1}
-.tag{display:inline-block;background:rgba(212,168,83,0.12);color:var(--gold);border:1px solid rgba(212,168,83,0.3);padding:4px 10px;border-radius:20px;font-size:11px;margin:4px 4px 0 0}
-@media(max-width:850px){.hero{grid-template-columns:1fr;padding:60px 6% 40px}.hero h1{font-size:38px}.about-grid{grid-template-columns:1fr}.nav-links a{margin-left:14px;font-size:12px}}
+:root{--navy:#0E1A2B;--navy2:#1E2A38;--gold:#D4AF37;--gold2:#FFC94A;--light:#F9F6F0;--muted:#C9C5BD;--card:#16233A}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:var(--navy);color:var(--light);line-height:1.6}
+h1,h2,h3,h4{font-family:'Playfair Display',serif}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(14,26,43,0.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(212,175,55,0.15);display:flex;justify-content:space-between;align-items:center;padding:14px 24px}
+.nav-logo{font-weight:800;letter-spacing:0.5px}
+.nav-logo span{color:var(--gold)}
+.nav-links a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid rgba(212,175,55,0.12);border-radius:16px;padding:24px;transition:.25s;cursor:pointer}
+.card:hover{transform:translateY(-4px);border-color:rgba(212,175,55,0.35)}
+.card h4{color:var(--gold);margin-bottom:8px}
+.card p{color:var(--muted);font-size:14px}
+.btn{display:inline-block;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px;cursor:pointer}
+.btn-gold{background:var(--gold);color:#0E1A2B}
+.about{display:grid;grid-template-columns:1fr 1.3fr;gap:40px;align-items:center;background:linear-gradient(180deg,rgba(22,35,58,0.6),rgba(14,26,43,0));border-radius:20px;padding:40px;border:1px solid rgba(212,175,55,0.08)}
+.about img{width:100%;border-radius:16px;border:2px solid rgba(212,175,55,0.2);object-fit:cover;max-height:520px}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,0.7);display:none;place-items:center;z-index:100;padding:20px}
+.modal-bg.active{display:grid}
+.modal{background:var(--light);color:#111;border-radius:16px;max-width:650px;width:100%;max-height:85vh;overflow:auto;padding:28px;position:relative}
+.close{position:absolute;top:14px;right:14px;background:var(--navy);color:white;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;cursor:pointer;border:none}
+.fab{position:fixed;bottom:24px;right:24px;width:56px;height:56px;background:#25D366;border-radius:50%;display:grid;place-items:center;font-size:28px;color:white;text-decoration:none;z-index:40}
+footer{background:#0A1220;border-top:1px solid rgba(212,175,55,0.1);padding:50px 24px;text-align:center;margin-top:60px}
+.socials{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.socials a{width:42px;height:42px;display:grid;place-items:center;background:var(--navy2);border:1px solid rgba(212,175,55,0.15);border-radius:10px;color:var(--light);text-decoration:none}
 </style>
 </head>
 <body>
-<div class="kente"></div>
-<nav class="nav">
-<div class="logo">THE <span>GRIOT</span> CIRCLE</div>
-<div class="nav-links">
-<a href="#archive">Archive</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
+<nav><div class="nav-logo">THE GRIOT <span style="color:#D4AF37">CIRCLE</span></div><div class="nav-links"><a href="#archive">Archive</a><a href="#about">About</a><a href="#contact">Contact</a></div></nav>
+<div style="padding:120px 24px 60px;text-align:center;max-width:900px;margin:auto">
+<div style="display:inline-flex;background:rgba(212,175,55,0.12);border:1px solid rgba(212,175,55,0.25);color:#FFC94A;padding:6px 14px;border-radius:20px;font-size:12px;margin-bottom:18px">⚫ Akinbobola Akinbote Ambrose • Culture Keeper</div>
+<h1 style="font-size:clamp(36px,6vw,64px);line-height:1.05;margin-bottom:16px">Stories That Keep <span style="color:#D4AF37;font-style:italic">Culture Alive</span></h1>
+<p style="color:#C9C5BD;max-width:600px;margin:0 auto 28px">A living archive of Black history, Yoruba language, authentic recipes, and wisdom they didn't teach in school.</p>
+<a class="btn btn-gold" href="#archive">Explore Archive</a>
+<a class="btn" style="border:1px solid rgba(212,175,55,0.4);color:white;margin-left:10px" href="#about">About The Griot</a>
 </div>
-</nav>
 
-<section class="hero">
-<div>
-<div class="badge">AKINBOBOLA AKINBOTE AMBROSE • CULTURE KEEPER</div>
-<h1>Stories That <span>Keep</span> Culture Alive.</h1>
-<p>The Griot Circle is a living archive of African stories, oral history, and cultural memory. I collect proverbs, folktales, and histories passed through generations — so our children will not forget who they are.</p>
-<a class="btn btn-gold" href="#archive">Explore Archive →</a>
-<a class="btn btn-line" href="#about">About The Griot</a>
-</div>
-<div class="card" onclick="document.getElementById('archive').scrollIntoView({behavior:'smooth'})">
-<h4 style="color:var(--gold);font-size:12px;letter-spacing:2px;margin-bottom:10px">LIVING ARCHIVE</h4>
-<h3 style="font-size:20px;margin-bottom:10px">The Oral Archive</h3>
-<p>Preserving 700 years of oral tradition. 3 collections, 100+ stories, proverbs and histories. Tap to enter archive →</p>
-<div style="margin-top:16px;display:flex;gap:8px"><span class="tag">Folktales</span><span class="tag">Proverbs</span><span class="tag">Oral History</span></div>
-</div>
-</section>
-
-<section id="archive" class="section">
-<h2>Explore <span>Archive</span></h2>
-<p class="section-desc">Tap any collection below to read full stories. Every story here was collected from elders and preserved for digital generation.</p>
+<section id="archive" style="padding:70px 24px;max-width:1100px;margin:auto">
+<h2 style="text-align:center;font-size:32px;margin-bottom:8px">The Living Archive</h2>
+<p style="text-align:center;color:#C9C5BD;margin-bottom:40px">Six collections from akinbobolakinbote.blogspot.com</p>
 <div class="grid">
-<div class="card" onclick="openModal('folktale')">
-<h4>📜 Folktales</h4>
-<p><b>5 Stories Available</b><br>Ancient Yoruba tales of Ijapa the tortoise, cunning, wisdom and moral lessons. Tap to read full story →</p>
+<div class="card" onclick="openModal('folktales')"><h4>📖 Folktales</h4><p><b>3 Classic Tales</b><br>Tortoise, Wisdom Pot, Monkey. Tap to read →</p></div>
+<div class="card" onclick="openModal('proverbs')"><h4>💬 Proverbs</h4><p><b>5 Yoruba Proverbs</b><br>Words that guide life. Tap →</p></div>
+<div class="card" onclick="openModal('history')"><h4>🏛️ Black History</h4><p><b>Hubert Ogunde & Ojuelegba</b><br>Hidden histories. Tap →</p></div>
+<div class="card" onclick="openModal('food')"><h4>🍲 Food Heritage</h4><p><b>Eba, Fufu, Zobo, Kunu, Garri</b><br>Recipes that raised us. Tap →</p></div>
+<div class="card" onclick="openModal('yoruba')"><h4>🗣️ Learn Yoruba</h4><p><b>Mo wa daadaa</b><br>Mother tongue lessons. Tap →</p></div>
+<div class="card" onclick="openModal('wisdom')"><h4>🕊️ Wisdom</h4><p><b>Equality, Empathy, Time</b><br>Reflections. Tap →</p></div>
 </div>
-<div class="card" onclick="openModal('proverb')">
-<h4>🗣️ Proverbs (Owe)</h4>
-<p><b>12 Proverbs Explained</b><br>Words of elders that guide generations. Meaning, origin and how to use them. Tap to read →</p>
-</div>
-<div class="card" onclick="openModal('history')">
-<h4>🥁 Oral History</h4>
-<p><b>Griot Tradition</b><br>Who are Griots? How we kept history for 700 years without writing. The talking drum. Tap to learn →</p>
+</section>
+
+<section id="about" style="padding:40px 24px;max-width:1100px;margin:auto">
+<div class="about">
+<img src="https://raw.githubusercontent.com/akinboteakinbobola/The-Griot-Circle-/main/1784993579761.jpg" alt="Akinbobola">
+<div>
+<h2>Meet The <span style="color:#D4AF37">Griot</span></h2>
+<p style="color:#C9C5BD;margin-bottom:12px">I'm Akinbobola Akinbote Ambrose — Togolese blood from my mother, Yoruba blood from my father. That's where The Griot was born.</p>
+<p style="color:#D4AF37;font-style:italic;margin-bottom:16px">A worker's sweat is not ice cream.</p>
+<a class="btn btn-gold" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" href="javascript:void(0)">Connect With Me</a>
+<div style="margin-top:16px;color:#C9C5BD;font-size:13px">📚 Blog: <a href="https://akinbobolakinbote.blogspot.com" target="_blank" style="color:#D4AF37">akinbobolakinbote.blogspot.com</a><br>📸 @akinbobolakinbote</div>
 </div>
 </div>
 </section>
 
-<section id="about" class="section">
-<h2>About <span>The Griot</span></h2>
-<div class="about-grid">
-<div>
-<img src="1784993579761.jpg" alt="Akinbobola Akinbote Ambrose - The Griot" class="profile-img">
-<div style="margin-top:12px;font-size:12px;color:var(--muted)">📍 Lagos, Nigeria • Akinbobola Akinbote Ambrose | 2026 • Culture Keeper</div>
-</div>
-<div>
-<p class="section-desc">I am <b style="color:var(--white)">Akinbobola Akinbote Ambrose</b>, storyteller, culture keeper, and founder of The Griot Circle from Lagos, Nigeria.</p>
-<p class="section-desc">My mission is simple: <b style="color:var(--white)">Keep African stories alive in digital age.</b> Our grandparents told us stories by moonlight. Today, moonlight is phone screen — but story must continue.</p>
-<p class="section-desc">Every tale, proverb and history on this site is collected, verified, and shared with love for our heritage. If you have a story from your village, share it with me.</p>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px">
-<div class="stat"><b>100+</b><span>Stories Preserved</span></div>
-<div class="stat"><b>3</b><span>Collections</span></div>
-<div class="stat"><b>700</b><span>Years of Tradition</span></div>
-<div class="stat"><b>1</b><span>Mission: Keep Culture Alive</span></div>
-</div>
-<div style="margin-top:20px"><a class="btn btn-gold" href="#contact">Connect With Me</a></div>
-</div>
-</div>
-</section>
-
-<footer id="contact" class="footer">
-<div style="font-weight:800;letter-spacing:2px;font-size:14px;margin-bottom:8px">THE <span style="color:var(--gold)">GRIOT</span> CIRCLE</div>
-<div>© 2026 The Griot Circle — Akinbobola Akinbote Ambrose</div>
-<div style="margin-top:10px;font-size:14px">Lagos, Nigeria • Culture Keeper & Storyteller</div>
-<div style="margin-top:18px;font-weight:600;color:var(--white)">Connect with me directly — I reply fast:</div>
-<div class="social">
-<a class="fb" href="https://www.facebook.com/share/1G4t9QqBwR/" target="_blank">Facebook</a>
-<a class="ig" href="https://instagram.com/Akinbobolakinbote" target="_blank">Instagram</a>
-<a class="tg" href="https://t.me/akinbobolakinbote" target="_blank">Telegram</a>
-<a class="wa" href="https://wa.me/2348120250315?text=Hello%20Akinbobola!%20I%20visited%20The%20Griot%20Circle%20website%20and%20love%20the%20stories!" target="_blank">WhatsApp</a>
-<a class="mail" href="mailto:akinboteakinbobola@gmail.com?subject=Hello from The Griot Circle Website">Email</a>
-</div>
-<div style="margin-top:28px;font-size:12px">Built with ❤️ for African Culture</div>
+<footer id="contact">
+<h2 style="font-size:28px;margin-bottom:10px">Join The Circle</h2>
+<p style="color:#C9C5BD;margin-bottom:24px">Learn, connect, and grow.</p>
+<div class="socials"><a href="https://wa.me/2348120250315" target="_blank">💬</a><a href="https://instagram.com/akinbobolakinbote" target="_blank">📷</a><a href="mailto:akinboteakinbobola94@gmail.com">✉️</a></div>
+<p style="color:#C9C5BD;font-size:13px;margin-top:30px">Sterling Bank 0135171610<br>WhatsApp: +2348120250315<br><br>© 2026 The Griot Circle</p>
 </footer>
 
-<div id="modal" class="modal" onclick="closeModal()"><div class="modal-box" onclick="event.stopPropagation()"><button class="close" onclick="closeModal()">×</button><div id="modalContent"></div></div></div>
-<a class="whatsapp-float" href="https://wa.me/2348120250315?text=Hello%20Akinbobola!%20I%20visited%20The%20Griot%20Circle%20website" target="_blank">💬</a>
+<div class="modal-bg" id="modalBg" onclick="if(event.target===this)closeModal()"><div class="modal"><button class="close" onclick="closeModal()">✕</button><div id="modalContent"></div></div></div>
+<a class="fab" href="https://wa.me/2348120250315" target="_blank">💬</a>
 
 <script>
 function openModal(type){
-const m=document.getElementById('modal');const c=document.getElementById('modalContent');
-if(type==='folktale'){
-c.innerHTML=`
-<h3>📜 <span>Folktales</span></h3>
-<p><span class="tag">Yoruba</span><span class="tag">Ijapa</span></p>
-<p><b>1. Why Tortoise Has Cracked Shell</b></p>
-<p>Long ago, there was famine. Ijapa tricked birds, borrowed their feathers to fly to feast in sky. He told hosts his name is "All Of You" so all food for him. Birds vexed, took feathers back mid-air. Ijapa fell, shell cracked on rocks. Till today, cracked.</p>
-<p><i>Lesson: Greed destroys.</i></p>
-<hr style="margin:14px 0;border:none;border-top:1px solid #1E2A38">
-<p><b>2. Tortoise and the Wisdom Pot</b></p>
-<p>Ijapa collected all wisdom in pot, tried to climb tree to hide it. He hung pot in front, couldn't climb. His wife said hang it behind. He did. He realized wisdom is everywhere, not one pot. He shared it.</p>
-<p><i>Lesson: Wisdom is shared, not hoarded.</i></p>
-<p style="margin-top:16px"><a class="btn btn-gold" href="https://wa.me/2348120250315?text=I%20want%20to%20share%20a%20folktale%20with%20The%20Griot%20Circle" target="_blank">Share Your Own Folktale</a></p>
-`;
-}
-else if(type==='proverb'){
-c.innerHTML=`
-<h3>🗣️ <span>Proverbs (Owe Yoruba)</span></h3>
-<p><b>1. "Bi omode ba laso bi agba, ko le ni akisa bi agba."</b><br>If a child has cloth like elder, he can't have rags like elder. <br><i>→ Respect experience. You may look like elder but you no get their experience.</i></p>
-<p><b>2. "Ile la ti n ko eso rode."</b><br>Charity begins at home.<br><i>→ If you no good for house, you no fit good for outside.</i></p>
-<p><b>3. "Oju ti o ba ri Oba ni Oba n je."</b><br>It is the eye that sees king that king eats.<br><i>→ Na who close to power dey benefit.</i></p>
-<p><b>4. "Eni ti o ba mo iwe, o mo eri, o mo odo."</b><br>Who knows book, knows head, knows river — knowledge makes you complete.</p>
-<p style="margin-top:16px"><a class="btn btn-gold" href="https://wa.me/2348120250315?text=I%20know%20a%20proverb%20to%20share:%20" target="_blank">Share Your Proverb</a></p>
-`;
-}
-else if(type==='history'){
-c.innerHTML=`
-<h3>🥁 <span>Oral History - The Griots</span></h3>
-<p><b>Who is a Griot?</b><br>In Mandinka, "Jeli". In Yoruba, "Arokin". For 700+ years, before white man bring book, we had human library.</p>
-<p>Griots memorized kings list for 30 generations, battles, births, marriages, wars. No writing. Only memory + drum.</p>
-<p><b>Talking Drum:</b> Drum mimics Yoruba tones. Message can travel 10 villages in 1 hour. Faster than SMS that time.</p>
-<p><b>Today:</b> I, Akinbobola Akinbote Ambrose, continue with phone, Instagram @Akinbobolakinbote, Telegram, WhatsApp — same mission: Keep stories alive so children no forget who they be.</p>
-<p><i>You reading this now, you be part of history.</i></p>
-<p style="margin-top:16px"><a class="btn btn-gold" onclick="closeModal(); setTimeout(()=>{document.getElementById('about').scrollIntoView({behavior:'smooth'})},300)" href="javascript:void(0)">Meet The Griot</a></p>
-`;
-}
-m.classList.add('active');document.body.style.overflow='hidden';
-}
-function closeModal(){document.getElementById('modal').classList.remove('active');document.body.style.overflow='auto'}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()})
+const c=document.getElementById('modalContent');let h='';
+if(type==='folktales'){h=`<h3>📖 Folktales</h3><p><b>1. Why Tortoise Has Cracked Shell</b></p><p>Tortoise greedy, fall from sky feast. Shell crack till today.</p><p><i>Lesson: Greed breaks you.</i></p><hr><p><b>2. Tortoise and Wisdom Pot</b></p><p>Tortoise collect all wisdom, fail to climb tree. Son teach am put pot for back. He vex scatter wisdom for world.</p><p><i>Lesson: Wisdom is not for one person.</i></p><hr><p><b>3. Why Monkey No Get House</b></p><p>Monkey borrow hammer, use am break coconut. Rain fall, no house till today.</p><p><i>Lesson: Use tools wisely.</i></p>`;}
+else if(type==='proverbs'){h=`<h3>💬 Yoruba Proverbs</h3><p><b>1. Bi omode ba subu, a wo iwaju; bi agba ba subu, a wo eyin.</b><br>Child falls looks forward, elder looks back.</p><hr><p><b>2. Owe l'esin oro.</b><br>Proverb is horse of speech.</p><hr><p><b>3. Ile la ti n ko eso rode.</b><br>Charity begins at home.</p><hr><p><b>4. A ki i da omi si iwaju ma a te ehinkule.</b><br>Don't pour water and step on wet floor.</p><hr><p><b>5. Eniti o mo iwe, o mo imo.</b><br>Who knows book, knows wisdom.</p>`;}
+else if(type==='history'){h=`<h3>🏛️ Black History</h3><p><b>Hubert Ogunde - Doyen of Theatre 🎭</b></p><p>Born July 10, 1916 Ososa. Founded Nigeria first professional theatre 1945. Banned for "Yoruba Ronu". Pioneer film "Aiye" & "Jaiyesimi". Father of Nigerian theatre.</p><p><a href="https://akinbobolakinbote.blogspot.com/2026/07/meet-hubert-ogunde-doyen-of-theatre.html" target="_blank" style="color:#D4AF37">Read full →</a></p><hr><p><b>Ojuelegba - Before Bridge</b></p><p>Before bridge, before traffic, na sacred forest. Spiritual gateway.</p><p><a href="https://akinbobolakinbote.blogspot.com/2026/07/ojuelegba-brief-history.html" target="_blank" style="color:#D4AF37">Read →</a></p>`;}
+else if(type==='food'){h=`<h3>🍲 Food Heritage</h3><p><b>WHAT IS EBA?</b><br>Eba = Garri = Fried Cassava Flour. 5-10 mins. Eat with Okro, Egusi.</p><p><a href="https://akinbobolakinbote.blogspot.com/2026/07/what-is-eba-if-youre-nigerian-this.html" target="_blank" style="color:#D4AF37">Recipe →</a></p><hr><p><b>FUFU IS NOT POUNDED YAM</b><br>Fufu = 100% fermented cassava. Mortar, pestle, boiling water.</p><p><a href="https://akinbobolakinbote.blogspot.com/2026/07/how-to-make-authentic-nigerian-fufu-100.html" target="_blank" style="color:#D4AF37">Full →</a></p><hr><p><b>SOAKED GARRI - 5-min breakfast</b><br>Water + sugar + ice + groundnut + coconut.</p><p><a href="https://akinbobolakinbote.blogspot.com/2026/07/welcome-to-soaked-garri-recipe-garri.html" target="_blank" style="color:#D4AF37">Recipe →</a></p><hr><p><b>ZOBO - Drink That Travelled World 🌍</b><br>ZOBO (Naija), SOBOLO (Ghana), BISSAP (Togo). Hibiscus + ginger + pineapple.</p><p><a href="https://akinbobolakinbote.blogspot.com/2026/07/how-to-make-nigerian-zobo-drink-hot-or.html" target="_blank" style="color:#D4AF37">Recipe →</a></p><hr><p><b>KUNU AYA - Tiger Nut Milk 🥛</b><br>Yoruba call OFIO. SOAK. BLEND. STRAIN.</p><p><a href="https://akinbobolakinbote.blogspot.com/2026/07/nigerian-tiger-nut-milk-kunu-ayaofio.html" target="_blank" style="color:#D4AF37">Recipe →</a></p>`;}
+else if(type==='yoruba'){h=`<h3>🗣️ Learn Yoruba</h3><p><b>"I am fine" – Mo wa daadaa</b><br>Repeat: Mo wa daadaa<br>Follow @akinbobolakinbote</p><hr><p><b>Àmì ohùn - Tones matter</b><br>One spelling, different tones, different meanings. Owo = money, broom, respect.</p><hr><p><b>Yoruba Names</b><br>Every name na prayer. Not gender definite.</p><hr><p><b>Psalm 91 in Yoruba</b><br>"Eleda mi, mo di e mu, mi o gbodo jabo" - deeper power in mother tongue.</p>`;}
+else if(type==='wisdom'){h=`<h3>🕊️ Wisdom</h3><p><b>A WORKER'S SWEAT IS NOT ICE CREAM</b></p><p>Behind invoice is time. Behind quotation is expertise. 2023 I traveled 7 states, paid assistant 100% immediately. 3 years later my balance still promise. Honour workers.</p><p><a href="https://akinbobolakinbote.blogspot.com/2026/07/honour-worker.html" target="_blank" style="color:#D4AF37">Full →</a></p><hr><p><b>TO THE COMPLAINER</b></p><p>I complained about father, mother, wife, country, job... Greatest changes needed WITHIN ME. Complain less. Reflect more.</p><hr><p><b>EQUALITY & PARTNERSHIP</b></p><p>Feminism ≠ misandry. Ngozi Okonjo-Iweala, Chimamanda show equality not hatred. Future built by both.</p><hr><p><b>TIME</b></p><p>Social media wonderful but don't leave brain offline. If you fail to manage time, time will manage you.</p>`;}
+c.innerHTML=h;document.getElementById('modalBg').classList.add('active');}
+function closeModal(){document.getElementById('modalBg').classList.remove('active');}
 </script>
 </body>
 </html>
